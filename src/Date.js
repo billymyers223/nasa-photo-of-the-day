@@ -1,22 +1,12 @@
 import "./App";
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
 
-const Display = ()=>{
-    const [pageData, setPageData] = useState({});
 
-
-    useEffect(() =>{
-      axios.get('https://api.nasa.gov/planetary/apod?api_key=nfrD31fHlr1QNpeqPdgraIlZUUPtz6PukrBcw7IJ')
-      .then(res=>{
-      setPageData(res.data);
-      }).catch(err=>{console.error(err);})
-  },[]);
-
+const Display = (props)=>{
 
 return(
-    <h4>{pageData.date}</h4>
+    <h4>{props.pageData.date}</h4>
 )
 
 };
