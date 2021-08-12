@@ -8,7 +8,7 @@ import Date from './Date';
 import Description from './Description';
 import Copyright from './Copyright';
 
-import styled, {keyframes} from 'styled-components';
+import styled from 'styled-components';
 
 
 const StyledApp = styled.div`
