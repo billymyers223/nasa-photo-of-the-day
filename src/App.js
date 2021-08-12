@@ -7,6 +7,30 @@ import Title from './Title';
 import Date from './Date';
 import Description from './Description';
 import Copyright from './Copyright';
+
+import styled, {keyframes} from 'styled-components';
+
+
+const StyledApp = styled.div`
+  background-color:${pr => pr.theme.backgroundColor};
+  width:70%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+
+  border-radius: 15px;
+  box-shadow: 2px 5px 10px  black;
+  border:#293241 4px solid;
+  text-align:center;
+  height:90vh;
+  .center{
+    display:flex;
+    width:100%;
+    justify-content:center;
+  }
+
+`
+
 function App() {
   
 //   const photoDetails = id =>{}
@@ -19,14 +43,20 @@ useEffect(() =>{
   setPageData(res.data);
   }).catch(err=>{console.error(err);})
 },[]);
+
+
   return (
     <section>
-      <Title pageData={pageData}/>
-      <NasaPhoto pageData={pageData}/>
-      <Date pageData={pageData}/>
-      <Copyright pageData={pageData}/>
-      <Description pageData={pageData}/>
-
+      <StyledApp>
+        <Title pageData={pageData}></Title>
+        <Date pageData={pageData}/>
+        <NasaPhoto pageData={pageData}/>
+        
+        <Copyright pageData={pageData}/>
+        <div class ='center'>
+        <Description pageData={pageData}/>
+        </div>
+      </StyledApp>
     </section>
   );
 }
