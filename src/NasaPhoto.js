@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const StyledApp = styled.div`
 img{
-  background-color:${pr => pr.theme.backgroundColor};
+
   width:70%;
   height:60vh;
   diplay:flex;
@@ -16,6 +16,13 @@ img{
   margin-top:-15px;
   border:${pr => pr.theme.white} 3px solid;
 }
+
+  @media ${pr => pr.theme.breakPointMobile}{
+    img{
+      width:90%;
+      height:70vh;
+    }
+  }
   `
 const Display = (props)=>{
 

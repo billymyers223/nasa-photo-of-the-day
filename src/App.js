@@ -29,6 +29,11 @@ const StyledApp = styled.div`
     justify-content:center;
   }
 
+  @media ${pr => pr.theme.breakPointMobile}{
+    width:90%;
+    height:auto;
+  }
+
 `
 
 function App() {
